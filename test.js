@@ -28,7 +28,7 @@ const test_values_missing_data = {
   errored_files: [4],
 };
 
-const getUnscannedFiles = async (test_values, name) => {
+const get_unscanned_files = async (test_values, name) => {
   try {
     const output = await tasks({
       s3_driver,
@@ -42,10 +42,10 @@ const getUnscannedFiles = async (test_values, name) => {
 
 (() => {
   return Promise.all([
-    getUnscannedFiles(test_values_all_good, "test_values_all_good"),
-    getUnscannedFiles(test_values_files_empty, "test_values_files_empty"),
-    getUnscannedFiles(test_values_not_array, "test_values_not_array"),
-    getUnscannedFiles(test_values_missing_data, "test_values_missing_data"),
+    get_unscanned_files(test_values_all_good, "test_values_all_good"),
+    get_unscanned_files(test_values_files_empty, "test_values_files_empty"),
+    get_unscanned_files(test_values_not_array, "test_values_not_array"),
+    get_unscanned_files(test_values_missing_data, "test_values_missing_data"),
   ]).then((results) => {
     results.map((response) => console.log(response));
   });

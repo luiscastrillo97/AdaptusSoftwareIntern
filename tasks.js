@@ -3,7 +3,7 @@ module.exports = (resources) => {
   const shared = {
     // SHARED_VAR: value
     // ...
-    SAVING_PARH: "/adaptus/luis_castrillo",
+    SAVING_PARH: "filesIdToScan.json",
   };
 
   // ============================================================================
